@@ -1,199 +1,139 @@
-// 🔥 COMPLETE WORKING ERP - script.js (Replace everything)
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Modal Functions
-    window.showAdmin = function() {
-        document.getElementById('adminModal').style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-    
-    window.closeAdmin = function() {
-        document.getElementById('adminModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    window.showContact = function() {
-        document.getElementById('contactModal').style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-    
-    window.closeContact = function() {
-        document.getElementById('contactModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    
-    window.openWhatsApp = function() {
-        window.open('https://wa.me/917300697011?text=🚀%20AxoraCampus%20ERP%20Demo%20Perfect%20Hai!', '_blank');
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxoraCampus - Premium School ERP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>AxoraCampus</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#features">Features</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#contact">Contact</a>
+                    <button class="demo-btn" onclick="showAdmin()">Admin Demo</button>
+                </div>
+            </div>
+        </nav>
 
-    // ADMIN DASHBOARD - FULLY FUNCTIONAL 🔥
-    if (document.querySelector('.admin-wrapper')) {
-        initFullERPDemo();
-    }
-    
-    function initFullERPDemo() {
-        // 1. Charts
-        initCharts();
-        
-        // 2. Search Functionality
-        initSearch();
-        
-        // 3. Tab Navigation
-        initTabs();
-        
-        // 4. Add Student Form
-        initForms();
-        
-        // 5. Real-time Updates
-        startRealTimeDemo();
-        
-        // 6. Notifications
-        initNotifications();
-    }
-    
-    function initCharts() {
-        const ctx = document.getElementById('attendanceChart') || document.createElement('canvas');
-        if (ctx) {
-            new Chart(ctx.getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Present', 'Absent', 'Late'],
-                    datasets: [{
-                        data: [Math.floor(Math.random()*400+300), Math.floor(Math.random()*50), Math.floor(Math.random()*30)],
-                        backgroundColor: ['#00d4aa', '#ff6b6b', '#ffa726']
-                    }]
-                }
-            });
-        }
-    }
-    
-    function initSearch() {
-        const searchInput = document.querySelector('.search-box input');
-        if (searchInput) {
-            searchInput.addEventListener('input', function() {
-                // Filter table rows
-                const rows = document.querySelectorAll('tbody tr');
-                const query = this.value.toLowerCase();
-                
-                rows.forEach(row => {
-                    const text = row.textContent.toLowerCase();
-                    row.style.display = text.includes(query) ? '' : 'none';
-                });
-            });
-        }
-    }
-    
-    function initTabs() {
-        document.querySelectorAll('.sidebar-nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector('.sidebar-nav a.active')?.classList.remove('active');
-                this.classList.add('active');
-                
-                // Dynamic content change
-                loadTabContent(this.dataset.tab || this.textContent);
-            });
-        });
-    }
-    
-    function loadTabContent(tabName) {
-        const mainContent = document.querySelector('.main-content');
-        const titles = {
-            'Dashboard': 'Dashboard Overview',
-            'Students': 'Student Management',
-            'Staff': 'Staff Management',
-            'Attendance': 'Attendance Tracker',
-            'Fees': 'Fee Collection',
-            'Exams': 'Exam Management',
-            'Reports': 'Analytics Reports'
-        };
-        
-        mainContent.querySelector('h1').textContent = titles[tabName] || tabName;
-        
-        // Simulate loading
-        showLoading();
-        setTimeout(hideLoading, 800);
-    }
-    
-    function initForms() {
-        // Add Student Demo
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('add-student')) {
-                showSuccess('Student added successfully! 🎉');
-            }
-        });
-    }
-    
-    function startRealTimeDemo() {
-        // Live updating stats
-        setInterval(() => {
-            const stats = document.querySelectorAll('.stat-info h3');
-            stats.forEach(stat => {
-                const num = parseFloat(stat.textContent.replace(/[^\d.]/g, ''));
-                if (Math.random() > 0.7) {
-                    stat.textContent = '₹' + (num + Math.floor(Math.random()*1000)).toLocaleString();
-                }
-            });
-        }, 3000);
-    }
-    
-    function initNotifications() {
-        const bell = document.querySelector('.notifications');
-        if (bell) {
-            bell.addEventListener('click', function() {
-                showNotification('New fee payment received! 💰');
-                this.querySelector('.badge').style.display = 'none';
-            });
-        }
-    }
-    
-    // Utility Functions
-    window.showSuccess = function(msg) {
-        const alert = document.createElement('div');
-        alert.className = 'alert success';
-        alert.innerHTML = `✅ ${msg}`;
-        document.body.appendChild(alert);
-        setTimeout(() => alert.remove(), 3000);
-    }
-    
-    window.showNotification = function(msg) {
-        const notif = document.createElement('div');
-        notif.className = 'notification';
-        notif.textContent = msg;
-        document.body.appendChild(notif);
-        setTimeout(() => notif.remove(), 4000);
-    }
-    
-    function showLoading() {
-        const loader = document.createElement('div');
-        loader.id = 'loader';
-        loader.innerHTML = '<div class="spinner"></div> Loading...';
-        document.querySelector('.main-content').appendChild(loader);
-    }
-    
-    function hideLoading() {
-        document.getElementById('loader')?.remove();
-    }
-    
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Navbar effects
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (navbar && window.scrollY > 100) {
-            navbar.style.background = 'rgba(255,255,255,0.95)';
-            navbar.style.backdropFilter = 'blur(20px)';
-        } else if (navbar) {
-            navbar.style.background = 'transparent';
-            navbar.style.backdropFilter = 'none';
-        }
-    });
-});
+        <div class="hero-content">
+            <h1>India's #1 Premium School ERP</h1>
+            <p>Complete Digital Solution for Modern Schools - 100+ Features, Mobile App Ready</p>
+            <div class="hero-stats">
+                <div><strong>500+</strong><br>Happy Schools</div>
+                <div><strong>50K+</strong><br>Students Managed</div>
+                <div><strong>99.9%</strong><br>Uptime</div>
+            </div>
+            <button class="cta-btn" onclick="showContact()">
+                <i class="fas fa-phone"></i> Book Demo Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>🔥 All-in-One School Management</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Student Management</h3>
+                    <p>Admission, Fees, Attendance, Results</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Staff Management</h3>
+                    <p>Payroll, Leaves, Timetable</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Academic Management</h3>
+                    <p>Exams, Syllabus, Reports</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile App</h3>
+                    <p>Parent & Teacher Apps</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Real-time Reports & Insights</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>100% Secure</h3>
+                    <p>Cloud Backup & Data Protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2>Live Demo - Try Now!</h2>
+            <div class="demo-container">
+                <iframe src="admin.html" class="demo-frame"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Ready to Transform Your School?</h2>
+                <p>Call Now: <a href="tel:+917300697011">+91 7300697011</a></p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7300697011</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@axoracampus.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>axoracampus.com</span>
+                    </div>
+                </div>
+                <button class="whatsapp-btn" onclick="openWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdmin()">&times;</span>
+            <iframe src="admin.html" class="admin-frame"></iframe>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContact()">&times;</span>
+            <h2>📞 Book Your Free Demo</h2>
+            <p><strong>Call Now:</strong> <a href="tel:+917300697011">+91 7300697011</a></p>
+            <p>WhatsApp: <a href="https://wa.me/917300697011">Click Here</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
