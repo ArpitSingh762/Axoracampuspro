@@ -3,70 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AxoraCampus - Premium School ERP | Live Demo</title>
-    <meta name="description" content="India's #1 School ERP Software. Live demo available. 500+ schools using. Call +91 7300697011">
+    <title>AxoraCampus - Best School Management Software | Live Demo</title>
+    <meta name="description" content="AxoraCampus - India's No.1 School ERP Software. Live demo available. 500+ Schools Trust Us. Call +91 7300697011">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/917300697011?text=Hi%20AxoraCampus%20demo%20chahiye" class="whatsapp-float" target="_blank">
+    <!-- Floating Action Button -->
+    <a href="https://wa.me/917300697011?text=Hi%20AxoraCampus%20team%2C%20school%20ERP%20demo%20chahiye" class="fab" target="_blank">
         <i class="fab fa-whatsapp"></i>
-        <span>+91 7300697011</span>
     </a>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-university"></i>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap"></i>
                 <span>AxoraCampus</span>
             </div>
-            <div class="nav-menu">
-                <a href="#demo">Live Demo</a>
-                <a href="#features">Features</a>
-                <a href="#contact">Contact</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+917300697011" class="phone-btn">
+                    <i class="fas fa-phone"></i> +91 7300697011
+                </a>
             </div>
-            <button class="demo-btn" onclick="openDemo()">
-                <i class="fas fa-play-circle"></i> Watch Demo
-            </button>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - udteschool.com Style -->
     <section class="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>India's <span class="gradient-text">#1</span> School ERP</h1>
-                <p class="hero-subtitle">500+ Schools | 50K+ Students | 99.9% Uptime</p>
+            <div class="hero-left">
+                <div class="badge">Trusted by 500+ Schools</div>
+                <h1 class="hero-title">
+                    Complete <span class="highlight">School Management</span><br>
+                    Software with Live Demo
+                </h1>
+                <p class="hero-desc">
+                    Manage your entire school operations in one place. 
+                    Student management, fee collection, attendance, 
+                    exams & much more. See live demo below!
+                </p>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <div class="stat-number" data-target="500">0</div>
-                        <span>Happy Schools</span>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Schools</div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number" data-target="50000">0</div>
-                        <span>Students Managed</span>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Students</div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-number" data-target="999">0</div>
-                        <span>₹ Cr Fees Collected</span>
+                    <div class="stat-item">
+                        <div class="stat-number">₹50Cr+</div>
+                        <div class="stat-label">Fees Collected</div>
                     </div>
                 </div>
                 <div class="hero-buttons">
-                    <button class="cta-primary" onclick="scrollToContact()">
-                        <i class="fas fa-phone"></i> Call Now +91 7300697011
-                    </button>
-                    <button class="cta-secondary" onclick="openDemo()">
-                        <i class="fas fa-play"></i> Watch Live Demo (2 Min)
-                    </button>
+                    <a href="#demo" class="btn-primary">
+                        <i class="fas fa-play"></i> Watch Live Demo
+                    </a>
+                    <a href="tel:+917300697011" class="btn-secondary">
+                        <i class="fas fa-phone"></i> Call +91 7300697011
+                    </a>
                 </div>
             </div>
-            <div class="hero-video">
-                <div class="video-placeholder" onclick="openDemo()">
-                    <i class="fas fa-play-circle"></i>
-                    <span>Click to Watch Demo</span>
+            <div class="hero-right">
+                <div class="demo-preview">
+                    <iframe src="demo.html" class="demo-frame"></iframe>
+                    <div class="demo-overlay">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Click to Interact</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,111 +89,81 @@
     <!-- Features -->
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Why Schools Choose AxoraCampus?</h2>
+            <h2 class="section-title">Everything You Need for School Management</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Mobile Apps</h3>
-                    <p>Parent + Teacher + Student Apps</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Real-time Analytics</h3>
-                    <p>Dashboard + Reports + Insights</p>
+                    <h3>Student Management</h3>
+                    <p>Complete admission, records, certificates & reports</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-rupee-sign"></i>
                     </div>
                     <h3>Fee Management</h3>
-                    <p>Online Payment + Auto Reminders</p>
+                    <p>Online payments, auto reminders, receipts & reports</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3>Attendance</h3>
-                    <p>Biometric + Mobile + Auto SMS</p>
+                    <p>Biometric, mobile app, SMS alerts & analytics</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Student Management</h3>
-                    <p>Admission + Records + Certificates</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>100% Secure</h3>
-                    <p>Cloud Backup + Data Encryption</p>
+                    <h3>Analytics</h3>
+                    <p>Real-time dashboards, reports & insights</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title">What Schools Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <img src="https://via.placeholder.com/80" alt="School">
-                    <p>"Best ERP we ever used! Fees collection increased 40%."</p>
-                    <div class="testimonial-author">
-                        <strong>St. Xavier School</strong>
-                        <span>Principal</span>
-                    </div>
+            <h2 class="section-title">Simple Pricing</h2>
+            <div class="pricing-card">
+                <div class="price-header">
+                    <h3>School Pro</h3>
+                    <div class="popular">Most Popular</div>
                 </div>
-                <!-- More testimonials -->
+                <div class="price">₹9,999<span>/year</span></div>
+                <ul>
+                    <li>✅ Unlimited Students</li>
+                    <li>✅ Mobile Apps</li>
+                    <li>✅ 24/7 Support</li>
+                    <li>✅ Free Installation</li>
+                </ul>
+                <a href="https://wa.me/917300697011" class="btn-primary full-width">Get Started</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Demo Section -->
-    <section id="demo" class="demo-section">
-        <div class="container">
-            <h2 class="section-title">Live ERP Demo</h2>
-            <button class="demo-full-btn" onclick="openDemo()">
-                <i class="fas fa-expand-arrows-alt"></i> Full Screen Demo
-            </button>
-            <iframe src="demo.html" class="demo-frame"></iframe>
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Book Free Demo Today!</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
+            <h2 class="section-title">Ready to Transform Your School?</h2>
+            <div class="contact-actions">
+                <a href="tel:+917300697011" class="contact-btn phone">
                     <i class="fas fa-phone"></i>
-                    <h3>Call Now</h3>
-                    <a href="tel:+917300697011" class="phone-link">+91 7300697011</a>
-                </div>
-                <div class="contact-card">
+                    <span>Call Now<br>+91 7300697011</span>
+                </a>
+                <a href="https://wa.me/917300697011" class="contact-btn whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i>
-                    <h3>WhatsApp</h3>
-                    <a href="https://wa.me/917300697011" class="whatsapp-link">Chat Now</a>
-                </div>
-                <div class="contact-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <span>info@axoracampus.com</span>
-                </div>
+                    <span>WhatsApp Chat<br>Instant Reply</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p><i class="fas fa-phone"></i> +91 7300697011 | AxoraCampus © 2024</p>
+            <p>© 2024 AxoraCampus. All Rights Reserved | <a href="tel:+917300697011">+91 7300697011</a></p>
         </div>
     </footer>
 
