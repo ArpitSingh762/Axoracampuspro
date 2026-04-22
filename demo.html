@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxoraCampus - Live ERP Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="demo-body">
+    <!-- Top Bar -->
+    <div class="demo-header">
+        <div class="demo-title">
+            <i class="fas fa-play-circle"></i>
+            AxoraCampus ERP - Live Demo
+        </div>
+        <div class="demo-controls">
+            <button class="control-btn" onclick="resetDemo()">
+                <i class="fas fa-refresh"></i> Reset
+            </button>
+            <a href="https://wa.me/917300697011?text=Demo%20dekha%2C%20school%20ke%20liye%20lagana%20hai" class="buy-btn">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-nav">
+                <a href="#" class="active" data-tab="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="#" data-tab="students"><i class="fas fa-users"></i> Students</a>
+                <a href="#" data-tab="fees"><i class="fas fa-rupee-sign"></i> Fees</a>
+                <a href="#" data-tab="attendance"><i class="fas fa-calendar-check"></i> Attendance</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-value">1,247</div>
+                    <div class="stat-label">Total Students</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <div class="stat-value">₹4.2L</div>
+                    <div class="stat-label">Pending Fees</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <div class="stat-value">98.5%</div>
+                    <div class="stat-label">Attendance</div>
+                </div>
+            </div>
+
+            <!-- Charts & Tables -->
+            <div class="content-grid">
+                <div class="chart-container">
+                    <canvas id="demoChart"></canvas>
+                </div>
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-check-circle green"></i>
+                            <span>Rahul paid ₹25,000 fee</span>
+                        </div>
+                        <!-- More items -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
